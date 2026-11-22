@@ -1,0 +1,38 @@
+# arduino-dual-button-led
+/*
+ * Project: Dual-Button Controlled LED (Digital Input & Output)
+ * Description: Reads two push buttons configured with internal pull-up resistors 
+ *              and controls an LED state (in1 turns LED ON, in2 turns LED OFF).
+ * Hardware: Arduino Uno R3, 1x LED, 2x Push Buttons
+ * Author: masoumeh
+ */
+
+int led=8;     // LED connected to digital pin 8
+int in1=2;     // in1 (ON) connected to digital pin 2
+int in2=3;     // in2 (OFF) connected to digital pin 3
+
+void setup() {
+  // Initialize digital pins as output or input with internal pull-ups
+  pinMode(led,OUTPUT);
+  pinMode(in1,INPUT_PULLUP);
+  pinMode(in2,INPUT_PULLUP);
+
+}
+
+void loop() {
+  // Check if in1 is pressed (active LOW due to pull-up configuration)
+  if (digitalRead(in1)==LOW)
+  {
+    digitalWrite(led,HIGH);       // Turn LED ON
+  }
+  // Check if in2 is pressed (active LOW)
+  if (digitalRead(in2)==LOW)
+  {
+    digitalWrite(led,LOW);       // Turn LED OFF
+  }
+  
+  // Small delay for debounce / stability
+  delay(100);
+  }
+
+
