@@ -4,8 +4,8 @@
 This project demonstrates how to use digital input and output on an Arduino Uno R3. The goal is to control the state of an LED using two separate push buttons. To simplify the circuit, the internal pull-up resistors of the Arduino are utilized, eliminating the need for external resistors for the buttons.
 
 ## Features
-- **in1 (Input):** Turns the LED **ON**.
-- **in2 (Input):** Turns the LED **OFF**.
+- **Button 1 (Input):** Turns the LED **ON**.
+- **Button 2 (Input):** Turns the LED **OFF**.
 - **Hardware Optimization:** Uses `INPUT_PULLUP` to reduce component count.
 - **Debouncing:** Includes a small delay to ensure stable input reading.
 
